@@ -1,0 +1,40 @@
+class JavaScript {
+  version: string
+  tickit: number 
+  constructor(version:string, tickit: number){
+    this.version = version
+    this.tickit = tickit
+  }
+  getVersion(){
+    return this.version
+  }
+}
+
+const obj = new JavaScript('ECMAScript6', 5645)
+
+class PostImageOrText {
+  static borderV: 145
+  static borderT: 564
+  constructor 
+  (readonly likes: number, 
+  readonly comments: number, readonly text: string | undefined, readonly image?: string | number | undefined,) {}
+  getInfoPost(){
+    return {image:this.image, likes:this.likes,
+    comments: this.comments, text:this.text}
+  }
+}
+
+const userPost = new PostImageOrText(464, 28, 'Without image')
+console.log(userPost.getInfoPost())
+
+class PostVideo extends PostImageOrText {
+  static overlay: '5px'
+  constructor (readonly video: number | undefined, readonly likes: number, 
+  readonly comments: number, readonly text: string | undefined, readonly image?: string | number) {
+    super(comments, likes, text, image)
+}
+getInfoVideoPost(){
+    return {image:this.image, likes:this.likes,
+    comments: this.comments, text:this.text, video: this.video}
+  }
+}
